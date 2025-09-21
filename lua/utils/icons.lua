@@ -13,7 +13,9 @@ M.folder = {
   symlink = "", -- 符号链接文件夹
   arrow_closed = "", -- 文件夹关闭时的箭头
   arrow_open = "", -- 文件夹打开时的箭头
-} -- 2. Git 状态图标
+} 
+
+-- 2. Git 状态图标(主要用于文件浏览器)
 M.git = {
     unstaged = "󰡅", -- 未暂存
     staged = "󰍕", -- 已暂存
@@ -23,7 +25,18 @@ M.git = {
     deleted = "", -- 已删除
     ignored = "◌", -- 已忽略
 }
--- 3. 其他图标（如修改、隐藏文件）
+
+-- 4. gitsigns 图标, 主要用于git插件(gitsigns)
+M.gitsigns = {
+  add = '┃',          -- 新增行
+  change = '┃',       -- 修改行
+  delete = '▁',       -- 删除行
+  topdelete = '▔',    -- 顶部删除行
+  changedelete = '~', -- 修改并删除行
+  untracked = '┆',    -- 未跟踪行
+}
+
+-- 其他图标（如修改、隐藏文件）
 M.misc = {
   modified = "●", -- 修改过的文件
   hidden = "󰜌", -- 隐藏文件
