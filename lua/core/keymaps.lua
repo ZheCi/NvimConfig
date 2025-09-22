@@ -15,7 +15,7 @@ local opts = {
 
 -- --------------------------------------------------------------------------
 -- 将<C-c> 映射为 <Esc>, 为了触发InsertLeave事件(自动切换输入法)
-keymap.set("i", "<C-c>", "<Esc>", opts)
+vim.keymap.set({ "n", "i", "v", "x", "s", "o", "c"}, "<C-c>", "<Esc>", opts)
 -- space+v+==：格式化全部内容
 keymap.set("n", "<space>==", "mzggVG== `z", opts)
 -- 关闭当前窗格
