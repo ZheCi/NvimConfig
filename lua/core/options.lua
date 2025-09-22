@@ -5,6 +5,15 @@ local global = vim.g
 global.loaded_netrw = 1
 global.loaded_netrwPlugin = 1
 
+--  隐藏状态栏
+opt.laststatus = 0
+
+-- 设置全局Leader键
+global.mapleader = " "
+
+-- 设置局部Leader键
+global.maplocalleader = " "
+
 -- 折叠功能
 opt.foldenable = true
 
