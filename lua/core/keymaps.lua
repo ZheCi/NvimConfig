@@ -1,10 +1,11 @@
 -- 定义键映射的全局函数
-local keymap = vim.keymap
+local keymap     = vim.keymap
+local myFunction = require("utils.function")
 
 -- 定义选项
-local opts = {
-    noremap = true, -- 使用 noremap 方式映射
-    silent = true,   -- 静默映射,不在命令行显示
+local opts       = {
+  noremap = true, -- 使用 noremap 方式映射
+  silent = true,  -- 静默映射,不在命令行显示
 }
 
 -- vim 模式
@@ -15,9 +16,7 @@ local opts = {
 
 -- --------------------------------------------------------------------------
 -- 将<C-c> 映射为 <Esc>, 为了触发InsertLeave事件(自动切换输入法)
-vim.keymap.set({ "n", "i", "v", "x", "s", "o", "c"}, "<C-c>", "<Esc>", opts)
--- space+v+==：格式化全部内容
-keymap.set("n", "<space>==", "mzggVG== `z", opts)
+vim.keymap.set({ "n", "i", "v", "x", "o" }, "<C-c>", "<Esc>", opts)
 -- 关闭当前窗格
 keymap.set("n", "<C-S-d>", ":only<CR>", opts)
 -- --------------------------------------------------------------------------
@@ -48,3 +47,5 @@ keymap.set("n", "<C-S-q>", "<cmd>BufferClose<CR>", opts)
 -- 固定当前buffer
 keymap.set("n", "<A-p>", "<cmd>BufferPin<CR>", opts)
 
+-- 关闭当前窗口
+keymap.set("n", "<leader>wc", myFunction.close_pane_and_buffer_if_unused, opts)
