@@ -67,10 +67,13 @@ end
 ---@field offsetEncoding? string
 -- ↑ 用于类型注释，说明 clangd 初始化时可能返回 offsetEncoding
 
+-- 配置mason安装路径
+local mason_root = vim.fn.stdpath("data") .. "/mason/"
+
 ---@type vim.lsp.Config
 return {
   -- 启动 clangd 的命令
-  cmd = { 'clangd' },
+  cmd = { mason_root .. "/bin/clangd" },
 
   -- 关联的文件类型
   filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
